@@ -1,6 +1,6 @@
 {
   "name": "@kairoui/useapiguard",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A reusable React hook (like `useIsValidRequest`) that:",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
