@@ -1,9 +1,8 @@
-// src/hooks/usePut.ts
 import { ZodType } from "zod";
-import { ApiGuardType } from "../types/api";
-import { useApiGuard } from "../core/useApiGuard";
+import { ApiGuardType } from "../../types/api";
+import { useApiGuard } from "../../core/useApiGuard";
 
-export function usePut<TBody = unknown, TData = unknown>(
+export function usePost<TBody = unknown, TData = unknown>(
   url: string,
   body: TBody,
   schema?: ZodType<TData>,
@@ -11,7 +10,7 @@ export function usePut<TBody = unknown, TData = unknown>(
 ): ApiGuardType<TData> {
   return useApiGuard<TBody, TData>({
     url,
-    method: "PUT",
+    method: "POST",
     body,
     ...(schema ? { schema } : {}),
     ...(headers ? { headers } : {}),

@@ -1,9 +1,8 @@
-import { ur } from "zod/v4/locales";
 import { ZodType } from "zod";
-import { ApiGuardType } from "../types/api";
-import { useApiGuard } from "../core/useApiGuard";
+import { ApiGuardType } from "../../types/api";
+import { useApiGuard } from "../../core/useApiGuard";
 
-export function usePost<TBody = unknown, TData = unknown>(
+export function usePatch<TBody = unknown, TData = unknown>(
   url: string,
   body: TBody,
   schema?: ZodType<TData>,
@@ -11,7 +10,7 @@ export function usePost<TBody = unknown, TData = unknown>(
 ): ApiGuardType<TData> {
   return useApiGuard<TBody, TData>({
     url,
-    method: "POST",
+    method: "PATCH",
     body,
     ...(schema ? { schema } : {}),
     ...(headers ? { headers } : {}),

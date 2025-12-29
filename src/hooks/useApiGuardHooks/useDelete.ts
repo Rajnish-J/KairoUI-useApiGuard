@@ -1,7 +1,6 @@
-// src/hooks/useDelete.ts
 import { ZodType } from "zod";
-import { ApiGuardType } from "../types/api";
-import { useApiGuard } from "../core/useApiGuard";
+import { ApiGuardType } from "../../types/api";
+import { useApiGuard } from "../../core/useApiGuard";
 
 export function useDelete<TData = unknown>(
   url: string,
